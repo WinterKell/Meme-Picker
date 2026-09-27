@@ -176,7 +176,13 @@ function getEmotionsArray(cats){
             catEmotions.push(emotion)
         }
     }
-    console.log(catEmotions)
+    return catEmotions
 }
 
-getEmotionsArray(catsData)
+
+function renderEmotionsRadios(cats) {
+    const emotions = getEmotionsArray(cats)
+    console.log(emotions)
+}
+
+renderEmotionsRadios(catsData)
