@@ -2,15 +2,20 @@ import { catsData } from "/data.js";
 
 const emotionRadio = document.getElementById('emotion-radios')
 const getImgBtn = document.getElementById('get-image-btn')
+const gifOnlyBox = document.getElementById('gifs-only-option')
 
 getImgBtn.addEventListener('click', getMatchingCatsArray)
 
 function getMatchingCatsArray() {
 
+    const isGif = gifOnlyBox.checked
+
+    console.log(isGif)
+
     if (document.querySelector('input[type="radio"]:checked')) {
         
         const selectedEmotion = document.querySelector('input[type="radio"]:checked').value
-        
+
         console.log(selectedEmotion)
     }
 }
