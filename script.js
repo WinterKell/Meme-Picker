@@ -1,6 +1,7 @@
 import { catsData } from "/data.js";
 
 const emotionRadio = document.getElementById('emotion-radios')
+const radioBtn = document.getElementById('radio')
 
 function getEmotionsArray(cats){
     let catEmotions = []
@@ -19,7 +20,13 @@ function renderEmotionsRadios(cats) {
     const emotions = getEmotionsArray(cats)
     
     for (let eachEmotion of emotions) {
-        HTML += `<p>${eachEmotion}</p>`
+        HTML += 
+        `
+        <div class="radio">
+        <label for="${eachEmotion}">${eachEmotion}</label> 
+        <input type="radio" id="${eachEmotion}" value="${eachEmotion}" name="emotion">
+        </div>
+        `
     }
     
     emotionRadio.innerHTML = HTML
