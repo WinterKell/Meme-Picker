@@ -1,7 +1,13 @@
 import { catsData } from "/data.js";
 
 const emotionRadio = document.getElementById('emotion-radios')
-const radioBtn = document.getElementById('radio')
+
+emotionRadio.addEventListener('change', highlightCheckedOption)
+
+function highlightCheckedOption(event) {
+    document.getElementById(event.target.id).classList.add('highlight')
+}
+
 
 function getEmotionsArray(cats){
     let catEmotions = []
